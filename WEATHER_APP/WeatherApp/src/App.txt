@@ -1,0 +1,36 @@
+import React,{useState} from 'react';
+
+import './App.css';
+
+
+
+function App() {
+
+  // setCount is a function,count is a value
+  const [count,setCount] = useState(()=>{
+    return 4
+  });
+
+  const [theme,setTheme]=useState(()=>{
+      return 'blue'
+  });
+
+      function decrementCount() {
+        setCount(prevCount => prevCount -1 )
+        setTheme('red')
+      }
+      function incrementCount() {
+        setCount(prevCount => prevCount +1 )
+      }
+  return (
+
+    <>
+          <button onClick={decrementCount}>-</button>
+              <span>{count}</span>
+              <span>{theme}</span>
+              <button onClick={incrementCount}>+</button>
+    </>
+  );
+}
+
+export default App;
